@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <script type = 'text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <title>GraficoPizza3</title>
+</head>
+<body>
+    <div id='graficoPizza'></div>   
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   <script>
+      google.charts.load('current', {'packages':['corechart']});
+
+        function desenharGraficoPizza() {
+
+            var tabela = new google.visualization.DataTable();
+            tabela.addColumn('string', 'categoria');
+            tabela.addColumn('number', 'valores');
+            tabela.addRows([
+                ['Educação', 1000], // 0
+                ['Transporte', 450], // 1
+                ['Lazer', 730], // 2
+                ['Saúde', 600],
+                ['Cartão de crédito', 900],
+                ['Alimentação', 560]
+            ]);
+            var opcoes = {
+                title: 'Gastos',
+                height: 400,
+                weight: 700,
+                //pieHole: 0.4, // deixa o grafico com um furo no meio
+                is3D: true, // deixa o gráfico 3D
+                //legend: 'labeled', // o lado em que a legenda fica,labeled, top, bottom 
+                //pieSliceText: 'value',// value, label
+                //colors: ['grey', 'red', 'yellow', 'blue', 'pink', 'purple'] //segue a ordem do array de dados
+
+                slices: { // colorir pedaço por pedaço
+                    0: {},
+                    1: {color: 'grey'},
+                    2: {color: '#a6a6a6'},
+                    3: {color: 'grey'},
+                    4: {offset: 0.4, color: 'red'}, // separa um pedaço da pizza
+                    5: {color: 'grey'}
+                }
+            };
+            var grafico = new google.visualization.PieChart(document.getElementById('graficoPizza'));
+            grafico.draw(tabela, opcoes);
+        }
+        google.charts.setOnLoadCallback(desenharGraficoPizza);
+
+ </script>
+</body>
+</html>
