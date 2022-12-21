@@ -1,3 +1,5 @@
+google.charts.load('current', {'packages':['corechart'], 'language': 'pt'});
+google.charts.setOnLoadCallback(desenharGraficoLinha);
 function desenharGraficoLinha() {
     //Mês gastos 
     tabela = new google.visualization.DataTable()
@@ -20,7 +22,7 @@ function desenharGraficoLinha() {
     var opcoes = {
         title: 'Gráfico de Linhas',
         legend: 'none', // none = sem legenda
-        width: 950,
+        width: 800,
         height: 300,
         vAxis: {
                 format: 'currency', // no eixo Vertical-Y como moeda

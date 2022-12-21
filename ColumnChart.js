@@ -1,3 +1,6 @@
+google.charts.load('current', {'packages':['corechart'], 'language': 'pt'});
+google.charts.setOnLoadCallback(desenharGraficoLinha);
+
 function desenharGraficoLinha() {
         var tabela = google.visualization.arrayToDataTable( // arrayTo substitui o addColum e addRows
             [
@@ -19,6 +22,7 @@ function desenharGraficoLinha() {
         var opcoes = {
             title: 'Gráfico de Colunas',
             height: 300,
+            width: 800,
             legend: 'bottom',
             vAxis: {
                 format: 'currency',
@@ -51,6 +55,7 @@ function desenharGraficoLinha() {
         var opcoes2 = {
             title: 'Gráfico de colunas 2',
             height: 300,
+            width: 800,
             legend: 'bottom',
             vAxis: {
                 format: 'currency',
